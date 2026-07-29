@@ -1,0 +1,227 @@
+:root {
+    --bg-start: #6e1549;
+    --bg-end: #8a2851;
+    --nav-bg: #425c72;
+    --text-light: #f3f7fb;
+    --text-muted: rgba(243, 247, 251, 0.85);
+    --accent: #3b82f6;
+    --accent-dark: #2563eb;
+    --surface: rgba(255, 255, 255, 0.12);
+    --border: rgba(255, 255, 255, 0.18);
+    --radius: 24px;
+    --shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-light);
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: #ffffff;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+}
+
+button:hover,
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
+}
+
+button:focus-visible,
+.button:focus-visible {
+    outline: 3px solid rgba(59, 130, 246, 0.35);
+    outline-offset: 4px;
+}
+
+header,
+main,
+section {
+    width: 100%;
+}
+
+nav {
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: var(--nav-bg);
+    border-radius: calc(var(--radius) * 0.75);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 1.8rem;
+    font-weight: 800;
+}
+
+.logo span {
+    display: inline-block;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-items ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.nav-items ul li {
+    margin: 0;
+}
+
+.nav-items ul li a {
+    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 700;
+    transition: color 0.25s ease;
+}
+
+.nav-items ul li a:hover {
+    color: #ffd166;
+}
+
+.hero {
+    max-width: 1180px;
+    margin: 60px auto 0;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 48px;
+    padding: 0 20px;
+}
+
+.hero-text {
+    color: var(--text-light);
+}
+
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 0.85rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+}
+
+.hero h3 {
+    font-size: clamp(1.75rem, 2.2vw, 2.4rem);
+    color: var(--text-muted);
+    margin-bottom: 1.4rem;
+}
+
+.hero p {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.9;
+    color: var(--text-muted);
+    max-width: 720px;
+    margin-bottom: 32px;
+}
+
+.hero-image {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+.hero-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px 24px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.6rem, 6vw, 3.8rem);
+    }
+}
+
+@media (max-width: 620px) {
+    nav {
+        gap: 16px;
+    }
+
+    .nav-items ul {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .hero {
+        gap: 28px;
+        padding: 0 16px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}

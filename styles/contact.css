@@ -1,0 +1,94 @@
+@import url("style.css");
+
+.contact {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px 40px;
+}
+
+.contact h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 32px;
+    align-items: start;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+.cards {
+    display: grid;
+    gap: 18px;
+}
+
+.card {
+    padding: 24px 22px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    margin-bottom: 0.75rem;
+}
+
+.card p,
+.card small {
+    color: var(--text-muted);
+}
+
+.contact-form {
+    display: grid;
+    gap: 18px;
+}
+
+.contact-form label {
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+}
+
+.contact-form textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: fit-content;
+    padding: 14px 26px;
+}
+
+@media (max-width: 900px) {
+    .container {
+        grid-template-columns: 1fr;
+        padding: 28px;
+    }
+}
+
+@media (max-width: 620px) {
+    .contact {
+        margin: 24px auto;
+    }
+
+    .container {
+        padding: 22px;
+    }
+}

@@ -1,0 +1,73 @@
+@import url("style.css");
+
+.about {
+    max-width: 980px;
+    margin: 40px auto;
+    padding: 40px 32px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.about h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.about p {
+    max-width: 720px;
+    margin: 0 auto 32px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.about table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 24px;
+}
+
+.about th,
+.about td {
+    padding: 16px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #f7fbff;
+}
+
+.about th {
+    background: rgba(255, 255, 255, 0.12);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.about tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.about tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 900px) {
+    .about {
+        padding: 32px 24px;
+    }
+    .about table th,
+    .about table td {
+        padding: 14px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .about {
+        margin: 24px 16px;
+    }
+    .about p {
+        font-size: 1rem;
+    }
+}

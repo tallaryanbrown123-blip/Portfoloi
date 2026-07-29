@@ -1,0 +1,57 @@
+@import url("style.css");
+
+.page-intro {
+    max-width: 980px;
+    margin: 48px auto 24px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.page-intro h1 {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+    margin-bottom: 16px;
+}
+
+.page-intro p {
+    color: var(--text-muted);
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.projects-grid {
+    max-width: 1180px;
+    margin: 0 auto 48px;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.16);
+}
+
+.project-card h2 {
+    margin-bottom: 14px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
