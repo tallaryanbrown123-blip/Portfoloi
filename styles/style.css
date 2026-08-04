@@ -30,6 +30,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--text-light);
     background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    background-attachment: fixed;
     line-height: 1.6;
 }
 
@@ -77,16 +78,25 @@ section {
     width: 100%;
 }
 
+header {
+    padding: 18px 20px 0;
+}
+
+main {
+    padding-bottom: 24px;
+}
+
 nav {
     max-width: 1180px;
-    margin: 0 auto;
+    margin: 0 auto 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background: var(--nav-bg);
+    background: rgba(66, 92, 114, 0.95);
     border-radius: calc(var(--radius) * 0.75);
     box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -133,12 +143,12 @@ nav {
 
 .hero {
     max-width: 1180px;
-    margin: 60px auto 0;
+    margin: 40px auto 0;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
     align-items: center;
     gap: 48px;
-    padding: 0 20px;
+    padding: 0 20px 24px;
 }
 
 .hero-text {
@@ -278,6 +288,15 @@ nav {
 
     .hero h1 {
         font-size: clamp(2.6rem, 6vw, 3.8rem);
+    }
+
+    .highlights {
+        grid-template-columns: 1fr;
+    }
+
+    .site-footer {
+        justify-content: center;
+        text-align: center;
     }
 }
 
