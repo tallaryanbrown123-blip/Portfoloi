@@ -1,5 +1,9 @@
 @import url("style.css");
 
+main {
+    margin-top: 100px;
+}
+
 .contact {
     max-width: 1100px;
     margin: 40px auto;
@@ -22,6 +26,13 @@
     border-radius: var(--radius);
     padding: 32px;
     box-shadow: var(--shadow);
+    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.container:hover {
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(127, 176, 255, 0.2);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.18);
 }
 
 .cards {
@@ -35,6 +46,13 @@
     background: rgba(255, 255, 255, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 42px rgba(0, 0, 0, 0.16);
+    border-color: rgba(127, 176, 255, 0.22);
 }
 
 .card h2 {
@@ -44,6 +62,18 @@
 .card p,
 .card small {
     color: var(--text-muted);
+}
+
+.social-links {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+.social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 }
 
 .contact-form {
@@ -64,6 +94,15 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     background: rgba(255, 255, 255, 0.1);
     color: var(--text-light);
+    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: 2px solid rgba(59, 130, 246, 0.35);
+    border-color: rgba(59, 130, 246, 0.45);
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 0 4px rgba(79, 101, 255, 0.08);
 }
 
 .contact-form textarea {
@@ -76,13 +115,81 @@
     padding: 14px 26px;
 }
 
+.form-note {
+    margin: 0;
+    color: rgba(243, 247, 251, 0.75);
+    font-size: 0.95rem;
+}
+
+.social-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    border-color: rgba(127, 176, 255, 0.5);
+}
+
+.preview-sections {
+    max-width: 1180px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+.preview-sections h2 {
+    text-align: center;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: 32px;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.preview-card {
+    padding: 28px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.16);
+}
+
+.preview-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.preview-card p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+
 @media (max-width: 900px) {
+    main {
+        margin-top: 80px;
+    }
+    
     .container {
         grid-template-columns: 1fr;
         padding: 28px;
     }
+    
+    .preview-grid {
+        grid-template-columns: 1fr;
+    }
 }
-
 @media (max-width: 620px) {
     .contact {
         margin: 24px auto;

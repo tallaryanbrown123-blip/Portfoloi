@@ -1,5 +1,9 @@
 @import url("style.css");
 
+main {
+    margin-top: 100px;
+}
+
 .page-intro {
     max-width: 980px;
     margin: 48px auto 24px;
@@ -50,8 +54,67 @@
     line-height: 1.8;
 }
 
+.service-card ul {
+    margin-top: 18px;
+    padding-left: 20px;
+    color: var(--text-muted);
+}
+
+.service-card li {
+    margin-bottom: 10px;
+}
+
+.preview-sections {
+    max-width: 1180px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+.preview-sections h2 {
+    text-align: center;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: 32px;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.preview-card {
+    padding: 28px 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.preview-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.16);
+}
+
+.preview-card h3 {
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.preview-card p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+
 @media (max-width: 900px) {
-    .service-grid {
+    main {
+        margin-top: 80px;
+    }
+    
+    .service-grid,
+    .preview-grid {
         grid-template-columns: 1fr;
     }
 }
+
